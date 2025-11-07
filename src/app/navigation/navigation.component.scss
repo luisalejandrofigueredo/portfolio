@@ -1,0 +1,39 @@
+.sidenav-container {
+  height: 100%;
+  padding-top: 64px; /* Height of the mat-toolbar */
+}
+
+.sidenav {
+  width: 200px;
+  height: 100%; /* Ensure sidenav takes full height */
+  overflow-y: visible; /* Enable vertical scrolling */
+  background-color: lightblue; /* Temporary background color */
+}
+
+.mat-nav-list {
+  background-color: lightcoral; /* Temporary background color */
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-list-item {
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+}

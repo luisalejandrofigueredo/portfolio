@@ -1,0 +1,18 @@
+.about-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.about-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: center;
+  margin: 20px 0;
+}

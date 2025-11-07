@@ -1,13 +1,25 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideClientHydration } from '@angular/platform-browser';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
+import { provideTranslateService, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes), provideClientHydration(withEventReplay())
+    provideRouter(routes),
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
+     provideTranslateService({
+            loader: provideTranslateHttpLoader({
+                prefix: 'assets/i18n/',
+                suffix: '.json',
+                enforceLoading: false,
+                useHttpBackend: false
+            })
+        })
   ]
 };

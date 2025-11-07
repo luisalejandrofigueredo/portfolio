@@ -1,0 +1,49 @@
+body{
+  background-color: #8a98eb; /* Example using a blue color */
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card{
+    width: 520px;
+    align-content: center;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    box-shadow: 4px 4px 6px rgb(100 100 100);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.responsive {
+    width: 50px;
+    height: auto;
+  }
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+.linkTo {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.linkTo:hover {
+    color: darkblue;
+}
+
