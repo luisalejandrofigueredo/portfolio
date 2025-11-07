@@ -4,17 +4,28 @@ body{
 
 .flex-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    /* Make the container fill the slide so vertical centering works */
+    width: 100%;
+    min-height: 260px;
     margin-top: 20px;
     margin-bottom: 20px;
+    gap: 20px;
+    justify-items: center;
+
   }
 
   .card{
-    width: 520px;
-    align-content: center;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    /* Use a responsive width but keep a max width so it centers nicely */
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    padding: 15px;
+    background-color: rgb(109, 109, 109);
+    margin: 0 auto 10px auto;
+    /* remove the right margin to allow perfect centering */
     box-shadow: 4px 4px 6px rgb(100 100 100);
     border-radius: 8px;
     display: flex;
@@ -47,3 +58,66 @@ body{
     color: darkblue;
 }
 
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ensure slides have enough height for vertical centering on desktop */
+  width: 100%;
+  min-height: 320px;
+}
+
+/* make container use full width so centering is visible; avoid forcing full viewport height */
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile adjustments: reduce overall heights and nudge the card slightly upward */
+@media (max-width: 768px) {
+  .flex-container {
+    min-height: 200px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    gap: 12px;
+  }
+
+  .swiper-slide {
+    min-height: 60vh; /* allow slide to be a proportion of viewport without forcing full height */
+  }
+
+  .card {
+    max-width: 420px;
+    padding: 12px;
+    /* move card slightly up so it appears adjusted towards top on mobile */
+    transform: translateY(-8%);
+  }
+
+  .card img {
+    max-width: 160px;
+    height: auto;
+  }
+}
+
+/* Small phones: stronger upward adjustment */
+@media (max-width: 480px) {
+  .flex-container {
+    min-height: 160px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+
+  .swiper-slide {
+    min-height: 55vh;
+  }
+
+  .card {
+    max-width: 360px;
+    transform: translateY(-12%);
+  }
+
+  .card img {
+    max-width: 140px;
+  }
+}
